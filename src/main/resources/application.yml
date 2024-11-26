@@ -1,0 +1,12 @@
+spring:
+  application:
+    name:
+      spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:///home/ralph/code/configrepo
+          default-label: master
+server:
+  port: 8888
