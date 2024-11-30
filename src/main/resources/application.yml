@@ -1,12 +1,20 @@
 spring:
-  application:
-    name:
-      spring-cloud-config-server
   cloud:
     config:
       server:
         git:
-          uri: file:///home/ralph/code/configrepo
-          default-label: master
+          uri: ${HOME}/code/configrepo
+          fail-fast: true
+
+  application:
+    name:
+      spring-cloud-config-server
+
 server:
   port: 8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
