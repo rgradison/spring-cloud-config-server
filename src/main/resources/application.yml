@@ -1,14 +1,20 @@
+# Option 1: Change uri to GitHub HTTPS Repo (Recommended for CI/CD).
+# file://${HOME}/code/configrepo #${GIT_USERNAME} #${GIT_PASSWORD}.
+# If your GitHub repo is public, you don't even need username/password (unless you want to pull private config files).
 spring:
   cloud:
     config:
       server:
         git:
-          uri: ${HOME}/code/configrepo
+          uri: https://github.com/rgradison/BankAccountWithdrawal
+          default-label: master
+          username: ${GIT_USERNAME}
+          password: ${GIT_TOKEN}
+          clone-on-start: true
           fail-fast: true
 
   application:
-    name:
-      spring-cloud-config-server
+    name: spring-cloud-config-server
 
 server:
   port: 8888
