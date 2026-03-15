@@ -6,21 +6,44 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/rgradison/BankAccountWithdrawal
+          uri: https://github.com/rgradison/spring-cloud-config-server
           default-label: master
-          username: ${GIT_USERNAME}
-          password: ${GIT_TOKEN}
-          clone-on-start: true
-          fail-fast: true
+
+#         uri: file://${HOME}/code/configrepo #${GIT_USERNAME} #${GIT_PASSWORD}. #https://github.com/rgradison/BankAccountWithdrawal
+
+#          default-label: master
+#          username: ${GIT_USERNAME}
+#          password: ${GIT_TOKEN}
+#          clone-on-start: true
+#          fail-fast: true
+
+# // We use this strange command to run this file
+# http://localhost:8888/<file-name>/<profile>
+# http://localhost:8888/application/default
+
+#spring:
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/<org>/<config-repo>
+#          default-label: main
+#          username: your-github-username
+#          password: ${CONFIG_GIT_TOKEN}
+
 
   application:
     name: spring-cloud-config-server
 
 server:
-  port: 8888
+  port: 8888 # commonly used port for spring cloud config server by convention
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
+logging:
+  level:
+    root: DEBUG

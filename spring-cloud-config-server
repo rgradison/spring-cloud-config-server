@@ -1,0 +1,8 @@
+📁 1. spring-cloud-config-server (Project #1)
+Type: Spring Boot application
+
+Purpose: Serves external config files via HTTP
+
+Where it runs: A deployed microservice (e.g., on port 8888)
+
+What it does: Reads from the spring-cloud-config-repo and serves config to all microservices
