@@ -1,0 +1,12 @@
+Key difference:
+
+Feature	                        config-repo/application.yml	                    resources/application.yml
+Where it lives	                GitHub / external repo	                        Inside the app
+Source of truth	                Yes, central	                                No, fallback
+Can change without rebuild	    Yes	                                            No
+Used for Spring Cloud Config	Yes	                                            No
+Local dev fallback	            Optional	                                    Yes
+
+Rule of thumb:
+Use config-repo for all shared/production config.
+Keep resources/application.yml minimal — mostly for local defaults or dev profiles.
