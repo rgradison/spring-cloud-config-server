@@ -14,11 +14,14 @@ spring:
       leak-detection-threshold: 2000
       connection-timeout: 30000
 
+task:
+  feature-enabled: true
+
 management:
   endpoints:
     web:
       exposure:
-        include: health,metrics,env,configprops,info,prometheus
+        include: health,metrics,env,configprops,info,prometheus,refresh
   endpoint:
     health:
       show-details: always
