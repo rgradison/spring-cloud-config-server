@@ -13,6 +13,7 @@ spring:
   application:
     name: spring-cloud-config-server
 
+#This aint good for production
 management:
   endpoints:
     web:
